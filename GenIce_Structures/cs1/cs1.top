@@ -1,0 +1,25 @@
+#include "../charmm36-mar2019.ff/forcefield.itp"
+
+;include hydrate-water topology
+#include "hydrate_water.itp"
+
+#ifdef POSRES_ICE
+[ position_restraints ]
+; ai  funct  fcx    fcy    fcz
+   1    1    1000   1000   1000
+   2    1    1000   1000   1000
+   3    1    1000   1000   1000
+   4    1    1000   1000   1000
+#endif
+
+
+;include water topology
+#include "tip4p-ice.itp"
+
+[system]
+;name
+Methane hydrate in water-ethanol
+
+[molecules]
+;name        #mols
+ICE           2944

@@ -1,0 +1,46 @@
+[moleculetype]
+;mol name        nrexcl
+ SOL               1
+
+[atoms]
+; id at type resnr residu name  at name   cgnr charge
+  1   OWT4      1     SOL       OW         1     0
+  2   HW        1     SOL       HW1        1     0.5897
+  3   HW        1     SOL       HW2        1     0.5897
+  4   IW        1     SOL       MW         1    -1.1794
+
+
+[constraints]
+;i j funct doh  dhh
+1       2       1       0.09572
+1       3       1       0.09572
+2       3       1       0.15139
+
+[exclusions]
+1       2       3       4
+2       1       3       4
+3       1       2       4
+4       1       2       3
+
+
+
+; The position of the dummy is computed as follows:
+;
+;               O
+;
+;               D
+;
+;       H               H
+;
+; const = distance (OD) / [ cos (angle(DOH))    * distance (OH) ]
+;         0.015 nm      / [ cos (52.26 deg)     *
+
+
+[virtual_sites3]
+; Vsite from                    funct   a               b
+4       1       2       3       1       0.13458         0.13458
+
+
+
+
+
